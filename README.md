@@ -96,14 +96,14 @@ Core-слой:
 Данные маппятся в `ProductDto` -> `ProductEntity` через mapper.  
 Рейтинг представлен как `rating` (double) и `ratingCount` (int).
 
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 29 07 212" src="https://github.com/user-attachments/assets/9dbcca3f-4d5e-4507-9eeb-2229cd139eb3" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 30 53 33" src="https://github.com/user-attachments/assets/6376fbca-4378-4964-bf71-e751d135ab55" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 30 46 086" src="https://github.com/user-attachments/assets/826f0900-052a-4328-bef6-ae3ad05beb1b" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 30 26 293" src="https://github.com/user-attachments/assets/c829788f-792f-42d4-b6a1-392b5256c39f" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 30 42 106" src="https://github.com/user-attachments/assets/736e74e3-724e-4d84-8a21-2bcc72bb1685" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 29 56 16" src="https://github.com/user-attachments/assets/e42dae9d-b516-4dfd-86b0-a399be256dbf" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 29 33 165" src="https://github.com/user-attachments/assets/0be2f62e-de6e-4774-a55a-9cd74755bf2e" />
-<img width="1440" height="2560" alt="screenshot-2025-11-19_15 29 16 871" src="https://github.com/user-attachments/assets/e364e48f-5a24-4c83-ad6d-ea4d7e5a866d" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 29 07 212" src="https://github.com/user-attachments/assets/9dbcca3f-4d5e-4507-9eeb-2229cd139eb3" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 30 53 33" src="https://github.com/user-attachments/assets/6376fbca-4378-4964-bf71-e751d135ab55" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 30 46 086" src="https://github.com/user-attachments/assets/826f0900-052a-4328-bef6-ae3ad05beb1b" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 30 26 293" src="https://github.com/user-attachments/assets/c829788f-792f-42d4-b6a1-392b5256c39f" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 30 42 106" src="https://github.com/user-attachments/assets/736e74e3-724e-4d84-8a21-2bcc72bb1685" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 29 56 16" src="https://github.com/user-attachments/assets/e42dae9d-b516-4dfd-86b0-a399be256dbf" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 29 33 165" src="https://github.com/user-attachments/assets/0be2f62e-de6e-4774-a55a-9cd74755bf2e" />
+<img width="360" height="640" alt="screenshot-2025-11-19_15 29 16 871" src="https://github.com/user-attachments/assets/e364e48f-5a24-4c83-ad6d-ea4d7e5a866d" />
 
 
 
