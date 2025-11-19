@@ -1,0 +1,98 @@
+# Catalog App
+
+Flutter-приложение-каталог на основе публичного API [fakestoreapi.com](https://fakestoreapi.com).  
+Позволяет просматривать товары, искать, фильтровать по категориям и работать с локальной корзиной.
+Скриншоты ниже
+
+---
+
+## Функционал
+
+### Каталог
+
+- Список товаров с:
+  - картинкой,
+  - названием,
+  - ценой,
+  - категорией.
+- Поиск по названию (с debounce).
+- Фильтр по категориям (включая вариант «Все»).
+- Сортировка по цене:
+  - без сортировки,
+  - по возрастанию,
+  - по убыванию.
+- Pull-to-refresh для обновления списка.
+- Placeholder, если картинка не загрузилась.
+- Обработка ошибок (текст + кнопка «Повторить»).
+- Корректное поведение при пустом результате поиска/фильтра.
+
+### Детали товара
+
+- Картинка товара с fallback-заглушкой.
+- Название, категория, цена.
+- Рейтинг и количество отзывов.
+- Полное описание.
+- Кнопка:
+  - **Add to cart**, если товара ещё нет в корзине;
+  - **Remove from cart**, если товар уже добавлен.
+- Snackbar при добавлении/удалении из корзины.
+
+### Корзина
+
+- Локальное хранение содержимого через `HydratedBloc` (сохранение между перезапусками).
+- Список добавленных товаров с количеством.
+- Подсчёт общей суммы.
+- Удаление товара из корзины.
+
+---
+
+## Стек и технологии
+
+- **Flutter**
+- **State management**: `flutter_bloc`, `hydrated_bloc`
+- **DI**: `get_it`
+- **Навигация**: `go_router`
+- **HTTP**: `dio` с собственным интерсептором (baseUrl, таймауты, логирование)
+- **Модели и генерация кода**: `freezed`, `json_serializable`
+- **Хранение состояния**: `HydratedStorage` + `path_provider`
+
+---
+
+## Архитектура
+
+Проект организован по feature-based подходу:
+
+- `features/catalog`
+  - `data`: remote datasource, DTO, repository.
+  - `domain`: сущности, интерфейс репозитория, use case-ы.
+  - `presentation`: bloc, экраны и виджеты (`CatalogPage`, `ProductCard`, `CategoryFilter`, `SortDropdown`).
+- `features/cart`
+  - `presentation`: `CartBloc`, состояние/события, `CartPage`.
+- `features/product_details`
+  - `presentation`: `ProductDetailsPage`.
+
+Core-слой:
+
+- `core/api`: `EndPoints`, настройка `Dio` и интерсептора.
+- `core/service/injectable`: `configureDependencies()` и регистрации для `getIt`:
+  - `Dio`,
+  - remote data source,
+  - repository,
+  - use case-ы,
+  - `CatalogBloc`, `CartBloc`.
+- `core/theme`, `core/constants`: цвета, отступы, текстовые константы, стили, placeholder-картинка.
+
+Блоки создаются через `getIt` и пробрасываются в дерево через `MultiBlocProvider`.
+
+---
+
+## API
+
+Используется публичное Fake Store API:
+
+- `GET https://fakestoreapi.com/products` — список товаров
+- `GET https://fakestoreapi.com/products/categories` — список категорий
+
+Данные маппятся в `ProductDto` -> `ProductEntity` через mapper.  
+Рейтинг представлен как `rating` (double) и `ratingCount` (int).
+
